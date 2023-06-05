@@ -12,7 +12,7 @@ function displayMessage(role, message) {
   div.innerHTML = `<p><b> ${role === 'user' ? 'You' : 'Assistant'
   }: </b> ${message} </p>`;
   messages.appendChild(div);
-  messages.scropTop = messages.scrollHeight;
+  messages.scrollTop = messages.scrollHeight;
 }
 
 messageForm.addEventListener('submit', (e) => {
@@ -33,5 +33,5 @@ messageForm.addEventListener('submit', (e) => {
 });
 
 socket.on('message', (message) => {
-  displayMessage('assitant', message);
+  displayMessage('assistant', message);
 });
